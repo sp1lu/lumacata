@@ -5,7 +5,7 @@ import './routing/index.ts';
 import { Router, Route } from './routing/router.ts';
 
 // Routing
-const loadIndex = () => '<app-index></app-index>'
+const loadIndex = () => '<page-index></page-index>'
 const loadProgram = () => '<div>PROGRAMMA</div>'
 const loadMenu = () => '<div>MENU</div>'
 const loadNotFound = () => '<div>404</div>';

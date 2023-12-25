@@ -11,12 +11,13 @@ export class Index extends HTMLElement {
         this.shadow.innerHTML =
             `
             <div>
+                <span class="intro">Il Circolo PD Valcerusa presenta</span>
                 <h1>
-                    <span>LUMA</span>
-                    <span>CATA</span>
-                    <span>2024</span>
+                    <span class="first-row">LUMA</span>
+                    <span class="second-row">CATA</span>
+                    <span class="year">2024</span>
                 </h1>
-                <h2>10 - 15 giugno</h2>
+                <h2>10 - 15 GIUGNO</h2>
             </div>
             `
             ;
@@ -29,4 +30,4 @@ export class Index extends HTMLElement {
     }
 }
 
-customElements.define('app-index', Index);
+customElements.define('page-index', Index);
