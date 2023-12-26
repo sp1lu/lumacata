@@ -1,6 +1,8 @@
 // Import modules
 import './routing/router.ts';
 import './routing/index.ts';
+import './components/burger.ts';
+import './components/menu.ts';
 
 import { Router, Route } from './routing/router.ts';
 
