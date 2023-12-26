@@ -6,6 +6,11 @@
 }
 
 @font-face {
+  font-family: 'Brice';
+  src: url('/assets/fonts/Brice-BlackSemiExpanded.ttf');
+}
+
+@font-face {
   font-family: 'Always In My Heart';
   src: url('/assets/fonts/Always\ In\ My\ Heart.ttf');
 }

@@ -9,21 +9,20 @@
 
 div {
     /* height: 100%; */
-    font-family: 'Walrus';
+    font-family: 'Brice';
     text-align: center;
 }
 
 .intro {
     display: block;
     font-family: 'Always In My Heart';
-    font-size: 32px;
+    font-size: 2rem;
     color: var(--orange);
-    margin: 0 0 8px 0;
 }
 
 h1 {
-    font-size: 184px;
-    line-height: 10rem;
+    font-size: 8rem;
+    line-height: 7rem;
     margin: 0;
 }
 
@@ -39,7 +38,22 @@ h1 {
 }
 
 h2 {
-    font-size: 64px;
+    font-size: 3rem;
     color: var(--green);
     margin: 0;
+}
+
+@media screen and (max-width: 768px) {
+    .intro {
+        font-size: 1.25rem;    
+    }
+
+    h1 {
+        font-size: 4rem;
+        line-height: 3.5rem;
+    }
+
+    h2 {
+        font-size: 1.5rem;
+    }
 }
