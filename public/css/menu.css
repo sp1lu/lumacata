@@ -24,6 +24,20 @@ ul {
     list-style-type: none;
     font-family: 'Brice';
     text-align: center;
-    font-size: 2rem;
+    font-size: 3rem;
+}
+
+a {
     color: var(--orange);
+    text-decoration: none;
+}
+
+a:hover {
+    color: var(--beige);
+}
+
+@media screen and (max-width: 768px) {
+    ul {
+        font-size: 2rem;
+    }
 }
