@@ -1,0 +1,30 @@
+{
+    "categorie": [
+        {
+            "name": "Pizzeria",
+            "dishes": [
+                {
+                    "name": "Margherita",
+                    "prezzo": 5.00
+                },
+                {
+                    "name": "Quattro stagioni",
+                    "prezzo": 6.00
+                }
+            ]
+        },
+        {
+            "name": "Bar",
+            "dishes": [
+                {
+                    "name": "Caffè",
+                    "prezzo": 1.00
+                },
+                {
+                    "name": "Caffè macchiato",
+                    "prezzo": 1.00
+                }
+            ]
+        }
+    ]
+}

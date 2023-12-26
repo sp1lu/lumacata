@@ -1,3 +1,6 @@
+// Import services
+import './services/DataService.ts';
+
 // Import modules
 import './routing/router.ts';
 import './routing/index.ts';
@@ -5,6 +8,7 @@ import './components/burger.ts';
 import './components/menu.ts';
 
 import { Router, Route } from './routing/router.ts';
+import { DataService } from './services/DataService.ts';
 
 // Routing
 const loadIndex = () => '<page-index></page-index>'
@@ -21,3 +25,8 @@ const routes: Route[] = [
 ];
 
 router.addRoutes(routes);
+
+// Menu data
+DataService.instance.getData().then(data => {
+  console.log(data);
+});
