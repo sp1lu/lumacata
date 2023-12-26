@@ -27,13 +27,20 @@ export class Menu extends HTMLElement {
             ;
 
         if (!this.hasAttribute('is-open')) this.setAttribute('is-open', this.isOpen + '');
+        const links = this.shadow.querySelectorAll('a');
 
         // js
-        document.addEventListener('menu-toggled', (event: Event) => {
+        document.addEventListener('menu-toggle', (event: Event) => {
             const customEvent = event as CustomEvent<MenuToggledEventData>;
             this.isOpen = customEvent.detail.isOpen;
             this.setAttribute('is-open', this.isOpen + '');
         });
+
+        links.forEach(link => {
+            link.addEventListener('click', () => {
+                document.dispatchEvent(new CustomEvent('menu-click'));
+            });
+        })
 
         // css
         const style = document.createElement('link');

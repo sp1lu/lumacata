@@ -1,7 +1,6 @@
 export class BurgerBtn extends HTMLElement {
     shadow: ShadowRoot;
     isOpen: boolean;
-    checkbox!: HTMLInputElement;
 
     constructor() {
         super();
@@ -25,12 +24,16 @@ export class BurgerBtn extends HTMLElement {
             ;
 
         if (!this.hasAttribute('is-open')) this.setAttribute('is-open', this.isOpen + '');
-        this.checkbox = this.shadow.querySelector('input')!;
+        const checkbox = this.shadow.querySelector('input')!;
 
         // js
-        this.checkbox.addEventListener('change', () => {
+        checkbox.addEventListener('change', () => {
             this.isOpen = !this.isOpen;          
             this.setAttribute('is-open', this.isOpen + '');
+        });
+
+        document.addEventListener('menu-click', () => {
+            this.setAttribute('is-open', false + '');
         });
 
         // css
@@ -45,7 +48,7 @@ export class BurgerBtn extends HTMLElement {
         if (newValue != oldValue) {
             if (name == 'is-open') {                
                 this.isOpen = JSON.parse(newValue);
-                document.dispatchEvent(new CustomEvent('menu-toggled', { detail: { isOpen: JSON.parse(newValue) } }));
+                document.dispatchEvent(new CustomEvent('menu-toggle', { detail: { isOpen: JSON.parse(newValue) } }));
             }
         }
     }
