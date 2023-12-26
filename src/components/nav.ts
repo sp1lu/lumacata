@@ -2,7 +2,7 @@ interface MenuToggledEventData {
     isOpen: boolean;
 }
 
-export class Menu extends HTMLElement {
+export class Nav extends HTMLElement {
     shadow: ShadowRoot;
     isOpen: boolean;
 
@@ -45,7 +45,7 @@ export class Menu extends HTMLElement {
         // css
         const style = document.createElement('link');
         style.setAttribute('rel', 'stylesheet');
-        style.setAttribute('href', './css/menu.css');
+        style.setAttribute('href', './css/nav.css');
         this.shadow.append(style);
     }
 
@@ -60,4 +60,4 @@ export class Menu extends HTMLElement {
     }
 }
 
-customElements.define('app-menu', Menu);
+customElements.define('app-menu', Nav);

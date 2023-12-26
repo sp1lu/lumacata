@@ -1,19 +1,17 @@
-// Import services
-import './services/DataService.ts';
-
 // Import modules
 import './routing/router.ts';
 import './routing/index.ts';
+import './routing/menu.ts';
 import './components/burger.ts';
-import './components/menu.ts';
+import './components/nav.ts';
+import './components/dish.ts';
 
 import { Router, Route } from './routing/router.ts';
-import { DataService } from './services/DataService.ts';
 
 // Routing
 const loadIndex = () => '<page-index></page-index>'
 const loadProgram = () => '<div>PROGRAMMA</div>'
-const loadMenu = () => '<div>MENU</div>'
+const loadMenu = () => '<page-menu></page-menu>'
 const loadNotFound = () => '<div>404</div>';
 
 const router = document.querySelector('app-router') as Router;
@@ -25,8 +23,3 @@ const routes: Route[] = [
 ];
 
 router.addRoutes(routes);
-
-// Menu data
-DataService.instance.getData().then(data => {
-  console.log(data);
-});
