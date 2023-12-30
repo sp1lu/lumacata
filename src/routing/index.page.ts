@@ -1,4 +1,4 @@
-export class Index extends HTMLElement {
+export class IndexPage extends HTMLElement {
     private shadow: ShadowRoot;
 
     constructor() {
@@ -30,4 +30,4 @@ export class Index extends HTMLElement {
     }
 }
 
-customElements.define('page-index', Index);
+customElements.define('page-index', IndexPage);

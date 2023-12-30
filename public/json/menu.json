@@ -5,11 +5,11 @@
             "dishes": [
                 {
                     "name": "Margherita",
-                    "price": "5.00"
+                    "price": 5.00
                 },
                 {
                     "name": "Quattro stagioni",
-                    "price": "6.00"
+                    "price": 6.00
                 }
             ]
         },
@@ -18,11 +18,11 @@
             "dishes": [
                 {
                     "name": "Caffè",
-                    "price": "1.00"
+                    "price": 1.00
                 },
                 {
                     "name": "Caffè macchiato",
-                    "price": "1.00"
+                    "price": 1.00
                 }
             ]
         }

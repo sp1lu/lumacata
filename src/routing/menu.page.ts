@@ -1,7 +1,8 @@
-import { Dish } from '../components/dish.ts';
+import { DishComponent } from '../components/dish.component.ts';
+import { Dish } from '../models/dish.model.ts';
 import { DataService } from '../services/DataService.ts';
 
-export class Menu extends HTMLElement {
+export class MenuPage extends HTMLElement {
     shadow: ShadowRoot;
     _data: any;
 
@@ -32,11 +33,11 @@ export class Menu extends HTMLElement {
             title.innerText = category.name;
             div?.append(title);
 
-            category.dishes.forEach((dish: any) => {
-                const dishItem = document.createElement('app-dish') as Dish;
-                dishItem.name = dish.name;
-                dishItem.price = dish.price;
-                div?.append(dishItem);
+            category.dishes.forEach((item: any) => {
+                const dish = new Dish(item.name, item.price);
+                const dishComponent = document.createElement('app-dish') as DishComponent;
+                dishComponent.dish = dish;
+                div?.append(dishComponent);
             });
         });
 
@@ -48,4 +49,4 @@ export class Menu extends HTMLElement {
     }
 }
 
-customElements.define('page-menu', Menu);
+customElements.define('page-menu', MenuPage);

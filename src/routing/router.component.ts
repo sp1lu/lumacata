@@ -4,7 +4,7 @@ export interface Route {
     type: string;
 }
 
-export class Router extends HTMLElement {
+export class RouterComponent extends HTMLElement {
     private shadow: ShadowRoot;
     private routes: Route[];
 
@@ -56,4 +56,4 @@ export class Router extends HTMLElement {
 
 }
 
-customElements.define('app-router', Router);
+customElements.define('app-router', RouterComponent);
