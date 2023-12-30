@@ -7,7 +7,8 @@ import './components/nav.component.ts';
 import './components/dish.component.ts';
 import './components/map.component.ts';
 
-import { RouterComponent, Route } from './routing/router.component.ts';
+import { Route } from './models/route.model.ts';
+import { RouterComponent } from './routing/router.component.ts';
 
 // Routing
 const loadIndex = () => '<page-index></page-index>';

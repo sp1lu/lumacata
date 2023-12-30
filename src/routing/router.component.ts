@@ -1,8 +1,4 @@
-export interface Route {
-    url: string,
-    routing: () => string;
-    type: string;
-}
+import { Route } from '../models/route.model.ts';
 
 export class RouterComponent extends HTMLElement {
     private shadow: ShadowRoot;
