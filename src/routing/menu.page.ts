@@ -28,12 +28,14 @@ export class MenuPage extends HTMLElement {
         const div = this.shadow.querySelector('div');
 
         this.data.categorie.forEach((category: any) => {
+            if (!category.name) return;
             const title = document.createElement('h2');
             title.classList.add('category-title');
             title.innerText = category.name;
             div?.append(title);
 
             category.dishes.forEach((item: any) => {
+                if (!item.name || !item.price) return;
                 const dish = new Dish(item.name, item.price);
                 const dishComponent = document.createElement('app-dish') as DishComponent;
                 dishComponent.dish = dish;
