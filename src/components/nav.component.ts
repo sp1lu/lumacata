@@ -20,7 +20,7 @@ export class Nav extends HTMLElement {
                 <ul>
                     <li><a href="#menu">MENU</a></li>
                     <li><a href="#programma">PROGRAMMA</a></li>
-                    <li><a href="#menu">DOVE SIAMO</a></li>
+                    <li><a href="#dove-siamo">DOVE SIAMO</a></li>
                 </ul>
             </div>
             `
