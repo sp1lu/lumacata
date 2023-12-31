@@ -98,12 +98,13 @@ export class MapComponent extends HTMLElement {
         };
 
         Leaflet.geoJSON(this.data, {
-            pointToLayer: (feature, latLng) => this.createMarker(latLng),
+            pointToLayer: (feature, latLng) => this.createMarker(feature, latLng),
             onEachFeature: this.createPopup
         }).addTo(this.map);
     }
 
-    createMarker(latLng: Leaflet.LatLng) {       
+    createMarker(feature: any, latLng: Leaflet.LatLng) {       
+        console.log(feature);        
         return Leaflet.circleMarker(latLng, this.markerOptions);
     }
 
