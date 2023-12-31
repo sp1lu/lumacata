@@ -14,7 +14,7 @@ export class DataService {
         return this._data;
     }
 
-    set data(data) {
+    set data(data: any) {
         this._data = data;
     }
 

@@ -1,6 +1,6 @@
 import { DishComponent } from '../components/dish.component.ts';
 import { Dish } from '../models/dish.model.ts';
-import { DataService } from '../services/DataService.ts';
+import { DataService } from '../services/data.service.ts';
 
 export class MenuPage extends HTMLElement {
     shadow: ShadowRoot;

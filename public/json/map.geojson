@@ -1,0 +1,35 @@
+{
+    "type": "FeatureCollection",
+    "features": [
+        {
+            "type": "Feature",
+            "properties": {
+                "title": "Partenza navetta",
+                "mapsUrl": "https://www.google.com/maps/dir//44.4273294,8.743152/@44.4273442,8.7432828,21z?hl=it&entry=ttu"
+            },
+            "geometry": {
+                "coordinates": [
+                    8.743103948752491,
+                    44.42730580635549
+                ],
+                "type": "Point"
+            },
+            "id": 0
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "title": "Lumacata",
+                "mapsUrl": "https://www.google.com/maps/dir/Circolo+Arci+Fabbriche,+Via+delle+Fabbriche,+179,+16158+Genova+GE/''/@44.4476792,8.6787266,13z/data=!3m1!4b1!4m13!4m12!1m5!1m1!1s0x12d33b8ecda23227:0xd1e6d1b9164bad80!2m2!1d8.7199259!2d44.4476866!1m5!1m1!1s0x12d33b8ecda23227:0xd1e6d1b9164bad80!2m2!1d8.7199259!2d44.4476866?hl=it&entry=ttu"
+            },
+            "geometry": {
+                "coordinates": [
+                    8.719902686119724,
+                    44.4477165462589
+                ],
+                "type": "Point"
+            },
+            "id": 1
+        }
+    ]
+}

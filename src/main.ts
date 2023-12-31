@@ -2,6 +2,8 @@
 import './routing/router.component.ts';
 import './routing/index.page.ts';
 import './routing/menu.page.ts';
+import './routing/map.page.ts';
+
 import './components/burger.component.ts';
 import './components/nav.component.ts';
 import './components/dish.component.ts';
@@ -14,7 +16,7 @@ import { RouterComponent } from './routing/router.component.ts';
 const loadIndex = () => '<page-index></page-index>';
 const loadProgram = () => '<div>PROGRAMMA</div>';
 const loadMenu = () => '<page-menu></page-menu>';
-const loadMap = () => '<app-map></app-map>';
+const loadMap = () => '<page-map></page-map>';
 const loadNotFound = () => '<div>404</div>';
 
 const router = document.querySelector('app-router') as RouterComponent;
