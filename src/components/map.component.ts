@@ -5,10 +5,12 @@ import { MapService } from '../services/map.service.ts';
 export class MapComponent extends HTMLElement {
     _data: any;
     _map: Leaflet.Map | any;
+    _markerOptions: any;
 
     constructor() {
         super();
         this._map = null;
+        this._markerOptions = null;
     }
 
     get data() {
@@ -25,6 +27,14 @@ export class MapComponent extends HTMLElement {
 
     set map(map: Leaflet.Map | any) {
         this._map = map;
+    }
+
+    get markerOptions() {
+        return this._markerOptions;
+    }
+
+    set markerOptions(markerOptions: any) {
+        this._markerOptions = markerOptions;
     }
 
     async connectedCallback() {
@@ -61,13 +71,13 @@ export class MapComponent extends HTMLElement {
 
     render() {
         // const icon = Leaflet.icon({
-        //     iconUrl: '../node_modules/leaflet/dist/images/marker-icon.png',
+        //     iconUrl: '../node_modules/leaflet/dist/images/markerOptions-icon.png',
         //     iconAnchor: [12.5, 41],
         //     popupAnchor: [0, -48]
         // });
 
-        // const marker = Leaflet.marker([44.44771081525607, 8.71992801811008], { icon: icon }).addTo(map);
-        // marker.bindPopup("<b>Hello world!</b><br>I am a popup.");
+        // const markerOptions = Leaflet.markerOptions([44.44771081525607, 8.71992801811008], { icon: icon }).addTo(map);
+        // markerOptions.bindPopup("<b>Hello world!</b><br>I am a popup.");
 
         // const circle = Leaflet.circle([44.44771081525607, 8.71992801811008], {
         //     color: 'red',
@@ -78,7 +88,7 @@ export class MapComponent extends HTMLElement {
 
         // Leaflet.geoJSON(this.data).addTo(this.map);
 
-        const geojsonMarkerOptions = {
+        this.markerOptions = {
             radius: 8,
             fillColor: "#ff7800",
             color: "#000",
@@ -88,10 +98,18 @@ export class MapComponent extends HTMLElement {
         };
 
         Leaflet.geoJSON(this.data, {
-            pointToLayer: function (feature, latLng) {
-                return Leaflet.circleMarker(latLng, geojsonMarkerOptions);
-            }
+            pointToLayer: (feature, latLng) => this.createMarker(latLng),
+            onEachFeature: this.createPopup
         }).addTo(this.map);
+    }
+
+    createMarker(latLng: Leaflet.LatLng) {       
+        return Leaflet.circleMarker(latLng, this.markerOptions);
+    }
+
+    createPopup(feature: any, layer: Leaflet.Layer) {
+        if (!feature.properties && !feature.properties.title) return;
+        layer.bindPopup(feature.properties.title);
     }
 }
 
