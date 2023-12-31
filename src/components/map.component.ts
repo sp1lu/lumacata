@@ -1,5 +1,6 @@
 import leafletCss from 'leaflet/dist/leaflet.css?raw';
 import Leaflet from 'leaflet';
+import { MapService } from '../services/map.service.ts';
 
 export class MapComponent extends HTMLElement {
     _data: any;
@@ -16,8 +17,6 @@ export class MapComponent extends HTMLElement {
 
     set data(data: any) {
         this._data = data;
-        console.log(this.data);
-        this.render();
     }
 
     get map() {
@@ -26,10 +25,12 @@ export class MapComponent extends HTMLElement {
 
     set map(map: Leaflet.Map | any) {
         this._map = map;
-        this.render();
     }
 
-    connectedCallback() {
+    async connectedCallback() {
+        // services
+        this.data = await MapService.instance.getData();
+
         // css
         const css = document.createElement('style');
         css.innerHTML = leafletCss;
@@ -54,6 +55,8 @@ export class MapComponent extends HTMLElement {
             if (!this.map) return;
             this.map.invalidateSize();
         }, 100);
+
+        this.render();
     }
 
     render() {
@@ -73,7 +76,22 @@ export class MapComponent extends HTMLElement {
         //     radius: 10
         // }).addTo(map);
 
-        Leaflet.geoJSON(this.data).addTo(this.map);
+        // Leaflet.geoJSON(this.data).addTo(this.map);
+
+        const geojsonMarkerOptions = {
+            radius: 8,
+            fillColor: "#ff7800",
+            color: "#000",
+            weight: 1,
+            opacity: 1,
+            fillOpacity: 0.8
+        };
+
+        Leaflet.geoJSON(this.data, {
+            pointToLayer: function (feature, latLng) {
+                return Leaflet.circleMarker(latLng, geojsonMarkerOptions);
+            }
+        }).addTo(this.map);
     }
 }
 
