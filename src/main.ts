@@ -3,6 +3,7 @@ import './routing/router.component.ts';
 import './routing/index.page.ts';
 import './routing/menu.page.ts';
 import './routing/map.page.ts';
+import './routing/program.page.ts';
 
 import './components/burger.component.ts';
 import './components/nav.component.ts';
@@ -14,7 +15,7 @@ import { RouterComponent } from './routing/router.component.ts';
 
 // Routing
 const loadIndex = () => '<page-index></page-index>';
-const loadProgram = () => '<div>PROGRAMMA</div>';
+const loadProgram = () => '<page-program></page-program>';
 const loadMenu = () => '<page-menu></page-menu>';
 const loadMap = () => '<page-map></page-map>';
 const loadNotFound = () => '<div>404</div>';
