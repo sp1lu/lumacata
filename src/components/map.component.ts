@@ -1,16 +1,19 @@
 import leafletCss from 'leaflet/dist/leaflet.css?raw';
 import Leaflet from 'leaflet';
 import { MapService } from '../services/map.service.ts';
+import { MarkerService } from '../services/marker.service.ts';
 
 export class MapComponent extends HTMLElement {
     _data: any;
     _map: Leaflet.Map | any;
     _markerOptions: any;
+    _icons: HTMLElement[];
 
     constructor() {
         super();
         this._map = null;
         this._markerOptions = null;
+        this._icons = [];
     }
 
     get data() {
@@ -37,9 +40,18 @@ export class MapComponent extends HTMLElement {
         this._markerOptions = markerOptions;
     }
 
+    get icons() {
+        return this._icons;
+    }
+
+    set icons(icons: HTMLElement[]) {
+        this._icons = icons;
+    }
+
     async connectedCallback() {
         // services
         this.data = await MapService.instance.getData();
+        this.icons = MarkerService.instance.getIcons();       
 
         // css
         const css = document.createElement('style');
@@ -70,42 +82,25 @@ export class MapComponent extends HTMLElement {
     }
 
     render() {
-        // const icon = Leaflet.icon({
-        //     iconUrl: '../node_modules/leaflet/dist/images/markerOptions-icon.png',
-        //     iconAnchor: [12.5, 41],
-        //     popupAnchor: [0, -48]
-        // });
-
-        // const markerOptions = Leaflet.markerOptions([44.44771081525607, 8.71992801811008], { icon: icon }).addTo(map);
-        // markerOptions.bindPopup("<b>Hello world!</b><br>I am a popup.");
-
-        // const circle = Leaflet.circle([44.44771081525607, 8.71992801811008], {
-        //     color: 'red',
-        //     fillColor: '#f03',
-        //     fillOpacity: 0.5,
-        //     radius: 10
-        // }).addTo(map);
-
-        // Leaflet.geoJSON(this.data).addTo(this.map);
-
-        this.markerOptions = {
-            radius: 8,
-            fillColor: "#ff7800",
-            color: "#000",
-            weight: 1,
-            opacity: 1,
-            fillOpacity: 0.8
-        };
-
         Leaflet.geoJSON(this.data, {
             pointToLayer: (feature, latLng) => this.createMarker(feature, latLng),
             onEachFeature: this.createPopup
         }).addTo(this.map);
     }
 
-    createMarker(feature: any, latLng: Leaflet.LatLng) {       
-        console.log(feature);        
-        return Leaflet.circleMarker(latLng, this.markerOptions);
+    createMarker(feature: any, latLng: Leaflet.LatLng) {
+        console.log(feature);
+        console.log(this.icons);
+        
+        // return Leaflet.circleMarker(latLng, this.markerOptions);        
+        let svgIcon = new Leaflet.DivIcon({
+            html: this.icons[feature.id],
+            className: `${feature.id}`,
+            iconSize: [24, 40],
+            iconAnchor: [12, 40],
+        });
+        return Leaflet.marker(latLng, { icon: svgIcon });
+
     }
 
     createPopup(feature: any, layer: Leaflet.Layer) {
