@@ -18,6 +18,11 @@ b {
     color: var(--orange);
 }
 
+a {
+    color: var(--orange);
+    font-weight: 500;
+}
+
 .page {
     background-color: var(--red);
     color: var(--beige);
