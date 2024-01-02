@@ -1,1 +1,53 @@
-{"type":"FeatureCollection","features":[{"type":"Feature","properties":{"title":"Partenza navetta","maps":"","icon":"shuttle"},"geometry":{"coordinates":[8.743103948752491,44.42730580635549],"type":"Point"},"id":0},{"type":"Feature","properties":{"title":"Lumacata","maps":"","icon":"festival"},"geometry":{"coordinates":[8.719902686119724,44.4477165462589],"type":"Point"},"id":1},{"type":"Feature","properties":{"title":"Capolinea 97 (e 97/)","maps":"","icon":"bus"},"geometry":{"coordinates":[8.755290083576455,44.42840153565152],"type":"Point"},"id":2}]}
+{
+    "type": "FeatureCollection",
+    "features": [
+        {
+            "type": "Feature",
+            "properties": {
+                "title": "Partenza navetta",
+                "maps": "",
+                "icon": "shuttle"
+            },
+            "geometry": {
+                "coordinates": [
+                    8.743103948752491,
+                    44.42730580635549
+                ],
+                "type": "Point"
+            },
+            "id": 0
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "title": "Lumacata",
+                "maps": "",
+                "icon": "festival"
+            },
+            "geometry": {
+                "coordinates": [
+                    8.719902686119724,
+                    44.4477165462589
+                ],
+                "type": "Point"
+            },
+            "id": 1
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "title": "Capolinea 97 (e 97/)",
+                "maps": "",
+                "icon": "bus"
+            },
+            "geometry": {
+                "coordinates": [
+                    8.755290083576455,
+                    44.42840153565152
+                ],
+                "type": "Point"
+            },
+            "id": 2
+        }
+    ]
+}

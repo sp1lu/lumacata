@@ -2,12 +2,13 @@ import leafletCss from 'leaflet/dist/leaflet.css?raw';
 import Leaflet from 'leaflet';
 import { MapService } from '../services/map.service.ts';
 import { MarkerService } from '../services/marker.service.ts';
+import { Icon } from '../models/icon.model.ts';
 
 export class MapComponent extends HTMLElement {
     _data: any;
     _map: Leaflet.Map | any;
     _markerOptions: any;
-    _icons: HTMLElement[];
+    _icons: Icon[];
 
     constructor() {
         super();
@@ -44,14 +45,14 @@ export class MapComponent extends HTMLElement {
         return this._icons;
     }
 
-    set icons(icons: HTMLElement[]) {
+    set icons(icons: Icon[]) {
         this._icons = icons;
     }
 
     async connectedCallback() {
         // services
         this.data = await MapService.instance.getData();
-        this.icons = MarkerService.instance.getIcons();       
+        this.icons = MarkerService.instance.getIcons();
 
         // css
         const css = document.createElement('style');
@@ -89,18 +90,21 @@ export class MapComponent extends HTMLElement {
     }
 
     createMarker(feature: any, latLng: Leaflet.LatLng) {
-        console.log(feature);
-        console.log(this.icons);
-        
-        // return Leaflet.circleMarker(latLng, this.markerOptions);        
-        let svgIcon = new Leaflet.DivIcon({
-            html: this.icons[feature.id],
-            className: `${feature.id}`,
-            iconSize: [24, 40],
-            iconAnchor: [12, 40],
-        });
-        return Leaflet.marker(latLng, { icon: svgIcon });
+        const iconName = feature.properties.icon;
+        const chosenIcon = this.icons.find(icon => icon.name == iconName);
 
+        if (chosenIcon) {       
+            let svgIcon = new Leaflet.DivIcon({
+                html: chosenIcon.object,
+                className: `${chosenIcon.name}`,
+                iconSize: [24, 40],
+                iconAnchor: [12, 40],
+                popupAnchor: [0, -48]
+            });
+            return Leaflet.marker(latLng, { icon: svgIcon });
+        } else {
+            return Leaflet.marker(latLng);
+        }
     }
 
     createPopup(feature: any, layer: Leaflet.Layer) {
