@@ -52,7 +52,7 @@ export class MapComponent extends HTMLElement {
         this.append(style);
 
         // js
-        this.map = Leaflet.map(this, { zoomControl: false }).setView([44.44771081525607, 8.71992801811008], 15);
+        this.map = Leaflet.map(this, { zoomControl: false }).setView([44.44061405644311, 8.736987188621248], 14);
 
         Leaflet.control.zoom({ position: 'bottomright' }).addTo(this.map);
 
