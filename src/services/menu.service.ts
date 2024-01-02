@@ -1,13 +1,13 @@
-export class DataService {
+export class MenuService {
     static _dataUrl = './json/menu.json';
-    static _instance: DataService;
+    static _instance: MenuService;
     _data: any;
 
     constructor() {
-        if (DataService._instance) {
-            return DataService._instance
+        if (MenuService._instance) {
+            return MenuService._instance
         }
-        DataService._instance = this;
+        MenuService._instance = this;
     }
 
     get data() {
@@ -19,16 +19,16 @@ export class DataService {
     }
 
     static get instance() {
-        if (!DataService._instance) {
-            DataService._instance = new DataService();
+        if (!MenuService._instance) {
+            MenuService._instance = new MenuService();
         }
-        return DataService._instance;
+        return MenuService._instance;
     }
 
     getData() {
         return this.data ?
             Promise.resolve(this.data) :
-            fetch(DataService._dataUrl)
+            fetch(MenuService._dataUrl)
                 .then(res => res.json())
                 .then(data => {
                     this.data = data;

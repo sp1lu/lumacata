@@ -1,6 +1,6 @@
 import { DishComponent } from '../components/dish.component.ts';
 import { Dish } from '../models/dish.model.ts';
-import { DataService } from '../services/data.service.ts';
+import { MenuService } from '../services/menu.service.ts';
 
 export class MenuPage extends HTMLElement {
     shadow: ShadowRoot;
@@ -21,7 +21,7 @@ export class MenuPage extends HTMLElement {
 
     async connectedCallback() {
         // services
-        this.data = await DataService.instance.getData();
+        this.data = await MenuService.instance.getData();
 
         // html
         this.shadow.innerHTML = '<div></div>';
