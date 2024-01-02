@@ -7,7 +7,15 @@ export class ExperienceComponent extends HTMLElement {
     constructor() {
         super();
         this.shadow = this.attachShadow({ mode: 'closed' });
-        this._experience = { date: new Date(Date.now()), title: '', desc: '' }
+        this._experience = new Experience(new Date(), '', '');
+    }
+
+    get experience() {
+        return this._experience;
+    }
+
+    set experience(experience: Experience) {
+        this._experience = experience;
     }
 
     connectedCallback() {
@@ -15,10 +23,15 @@ export class ExperienceComponent extends HTMLElement {
         this.shadow.innerHTML =
             `
             <div>
-
+                <p class="dayNum"></p>
+                <p class="dayName"></p>
             </div>
             `
             ;
+
+        // console.log(this.experience.date.getDay());
+        console.log(this.experience.date.getFullYear())
+
     }
 }
 

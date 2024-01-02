@@ -9,6 +9,7 @@ import './components/burger.component.ts';
 import './components/nav.component.ts';
 import './components/dish.component.ts';
 import './components/map.component.ts';
+import './components/experience.component.ts';
 
 import { Route } from './models/route.model.ts';
 import { RouterComponent } from './routing/router.component.ts';

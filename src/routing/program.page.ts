@@ -1,3 +1,5 @@
+import { ExperienceComponent } from '../components/experience.component.ts';
+import { Experience } from '../models/experience.model.ts';
 import { ProgramService } from '../services/program.service.ts';
 
 export class ProgramPage extends HTMLElement {
@@ -20,9 +22,7 @@ export class ProgramPage extends HTMLElement {
     async connectedCallback() {
         // services
         this.data = await ProgramService.instance.getData();
-        console.log(this.data);
-        
-        
+
         // html
         this.shadow.innerHTML =
             `
@@ -31,6 +31,15 @@ export class ProgramPage extends HTMLElement {
             </div>
             `
             ;
+
+        const div = this.shadow.querySelector('.page');       
+
+        this.data.programma.forEach((item: any) => {            
+            const experience = new Experience(new Date(item.date), item.title, item.desc);            
+            const experienceComponent = document.createElement('app-experience') as ExperienceComponent;            
+            experienceComponent.experience = experience;            
+            div?.append(experienceComponent);
+        });
     }
 }
 
