@@ -1,4 +1,4 @@
-import facebook  from '../../public/assets/icons/facebook.svg';
+import facebook  from '/assets/icons/facebook.svg?url';
 
 interface MenuToggledEventData {
     isOpen: boolean;
@@ -14,9 +14,7 @@ export class Nav extends HTMLElement {
         this.isOpen = false;
     }
 
-    connectedCallback() {
-        console.log(facebook);
-        
+    connectedCallback() {        
         // html
         this.shadow.innerHTML =
             `
