@@ -21,11 +21,11 @@ export class Nav extends HTMLElement {
         this.shadow.innerHTML =
             `
             <div class="logo">
-                <p class="logo-text">
+                <a href="/" class="logo-text">
                     <span class="first-row">LUMA</span>
                     <span class="second-row">CATA</span>
                     <span class="year">2024</span>
-                </p>
+                </a>
             </div>
             <div class="menu">
                 <ul>
