@@ -1,3 +1,5 @@
+import facebook  from '../../public/assets/icons/facebook.svg';
+
 interface MenuToggledEventData {
     isOpen: boolean;
 }
@@ -13,15 +15,29 @@ export class Nav extends HTMLElement {
     }
 
     connectedCallback() {
+        console.log(facebook);
+        
         // html
         this.shadow.innerHTML =
             `
-            <div>
+            <div class="logo">
+                <p class="logo-text">
+                    <span class="first-row">LUMA</span>
+                    <span class="second-row">CATA</span>
+                    <span class="year">2024</span>
+                </p>
+            </div>
+            <div class="menu">
                 <ul>
                     <li><a href="#menu">MENU</a></li>
                     <li><a href="#programma">PROGRAMMA</a></li>
                     <li><a href="#dove-siamo">DOVE SIAMO</a></li>
                 </ul>
+            </div>
+            <div class="contacts">
+                <a href="https://www.facebook.com/profile.php?id=100068877053488" target="_blank">
+                    <img src="${facebook}" class="fb-icon">
+                </a>
             </div>
             `
             ;

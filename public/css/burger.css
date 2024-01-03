@@ -1,8 +1,8 @@
 :host {
     position: fixed;
-    top: 40px;
-    right: 40px;
-    z-index: 9999;
+    top: 24px;
+    right: 24px;
+    z-index: 99999;
 }
 
 #wrapper {

@@ -2,7 +2,7 @@ import { Icon } from '../models/icon.model.ts';
 
 export class MarkerService {
     static _iconNames: string[] = ['bus', 'festival', 'shuttle'];
-    static _iconsUrl = './assets/icons/';
+    static _iconsUrl = './assets/markers/';
     static _instance: MarkerService;
     _icons!: Icon[];
 

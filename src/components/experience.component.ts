@@ -24,7 +24,7 @@ export class ExperienceComponent extends HTMLElement {
             `
             <div class="event">
                 <div class="time">
-                    <span class="prefix">h.</span>
+                    <span class="prefix"></span>
                     <p class="value"></p>
                 </div>
                 <div class="description">
