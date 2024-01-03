@@ -1,0 +1,18 @@
+p {
+    margin: 0;
+}
+
+h3 {
+    font-family: 'Brice';
+    text-transform: uppercase;
+    margin: 0;
+}
+
+.event {
+    margin: 0 0 40px 0;
+}
+
+.time {
+    display: flex;
+    align-items: center;
+}

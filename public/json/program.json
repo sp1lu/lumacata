@@ -1,14 +1,84 @@
 {
-    "programma": [
+    "program": [
         {
-            "date": "2024-06-10T18:00:00.000",
-            "title": "Apertura stand",
-            "desc": "Inizio della serata con l'apertura degli stand gastronomici"
+            "date": "2024-06-13T18:00:00.000",
+            "events": [
+                {
+                    "date": "2024-06-13T18:00:00.000",
+                    "title": "Apertura stand",
+                    "desc": "Inizio della serata con l'apertura degli stand gastronomici"
+                },
+                {
+                    "date": "2024-06-13T19:30:00.000",
+                    "title": "37° Trofeo O. Moretti",
+                    "desc": "Partenza della gara podistica non competitiva per le colline di Fabbriche"
+                },
+                {
+                    "date": "2024-06-13T21:30:00.000",
+                    "title": "Orchestra Alta Marea",
+                    "desc": "Musica dal vivo"
+                }
+            ]
         },
         {
-            "date": "2024-06-10T19:30:00.000",
-            "title": "37° Trofeo O. Moretti",
-            "desc": "Partenza della gara podistica non competitiva per le colline di Fabbriche"
+            "date": "2024-06-14T18:00:00.000",
+            "events": [
+                {
+                    "date": "2024-06-14T18:00:00.000",
+                    "title": "Apertura stand",
+                    "desc": "Inizio della serata con l'apertura degli stand gastronomici" 
+                },
+                {
+                    "date": "2024-06-14T21:30:00.000",
+                    "title": "Yes We Dance",
+                    "desc": "Musica dal vivo"
+                }
+            ]
+        },
+        {
+            "date": "2024-06-15T18:00:00.000",
+            "events": [
+                {
+                    "date": "2024-06-15T18:00:00.000",
+                    "title": "Apertura stand",
+                    "desc": "Inizio della serata con l'apertura degli stand gastronomici" 
+                },
+                {
+                    "date": "2024-06-15T21:00:00.000",
+                    "title": "Audio 80",
+                    "desc": "Musica dal vivo"
+                }
+            ]
+        },
+        {
+            "date": "2024-06-16T18:00:00.000",
+            "events": [
+                {
+                    "date": "2024-06-16T12:00:00.000",
+                    "title": "Apertura stand gastronomici",
+                    "desc": "Menu completo per il pranzo della domanica, con primi, secondi e lumache."
+                },
+                {
+                    "date": "2024-06-16T21:00:00.000",
+                    "title": "Giuse e Alessia band",
+                    "desc": "Musica dal vivo"
+                }
+            ]
+        },
+        {
+            "date": "2024-06-17T18:00:00.000",
+            "events": [
+                {
+                    "date": "2024-06-15T18:00:00.000",
+                    "title": "Apertura stand",
+                    "desc": "Inizio della serata con l'apertura degli stand gastronomici" 
+                },
+                {
+                    "date": "2024-06-17T21:00:00.000",
+                    "title": "Radici a sud",
+                    "desc": "Musica dal vivo"
+                }
+            ]
         }
     ]
 }

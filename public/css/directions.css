@@ -3,6 +3,7 @@ h2 {
     color: var(--orange);
     font-family: 'Brice';
     line-height: 2rem;
+    text-transform: uppercase;
 }
 
 h1 {

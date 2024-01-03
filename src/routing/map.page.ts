@@ -15,7 +15,7 @@ export class MapPage extends HTMLElement {
                 <div class="directions">
                     <h1>Come raggiungerci</h1>
                     <div class="vehicle">
-                        <h2>Con il servizio navetta</h2>
+                        <h2>Con la navetta</h2>
                         <p>Per raggiungerci in comodità senza la preoccupazione del parcheggio è a disposizione un servizio navetta assolutamente <b>gratuito</b>.</p>
                         <p>La navetta è offerta da <a href="https://www.escursioniegite.it/" target="_blank">Diana Viaggi</a> con partenza da <b>Largo Carlo Dall'Orto</b> (piazzale che serve come <b>capolinea della linea 1</b> di AMT) indicativamente ogni mezz'ora a partire dalle ore 18:00.</p>
                         <p>Domenica 15 giugno in occasione dell'apertura della sagra anche a pranzo il servizio navetta è disponibile anche dalle 12:00 alle 14:00.</p>

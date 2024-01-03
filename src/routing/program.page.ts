@@ -24,22 +24,40 @@ export class ProgramPage extends HTMLElement {
         this.data = await ProgramService.instance.getData();
 
         // html
-        this.shadow.innerHTML =
+        this.shadow.innerHTML = 
             `
             <div class="page">
-                <p>PROGRAMMA</p>
+                <div class="program">
+                    <h1>Programma</h1>
+                </div>
             </div>
             `
             ;
+        const div = this.shadow.querySelector('.program');
 
-        const div = this.shadow.querySelector('.page');       
+        this.data.program.forEach((category: any) => {
+            if (!category.date) return;
+            const date = document.createElement('div');
+            date.classList.add('date');
+            const title = document.createElement('h2');
+            title.classList.add('title');            
+            title.innerText = Intl.DateTimeFormat('it-IT', { day: 'numeric', weekday: 'long', month: 'long' }).format(new Date(category.date));
+            date?.append(title);
+            div?.append(date);
 
-        this.data.programma.forEach((item: any) => {            
-            const experience = new Experience(new Date(item.date), item.title, item.desc);            
-            const experienceComponent = document.createElement('app-experience') as ExperienceComponent;            
-            experienceComponent.experience = experience;            
-            div?.append(experienceComponent);
+            category.events.forEach((event: any) => {
+                const experience = new Experience(new Date(event.date), event.title, event.desc);
+                const experienceComponent = document.createElement('app-experience') as ExperienceComponent;
+                experienceComponent.experience = experience;
+                date?.append(experienceComponent);
+            });
         });
+
+        // css
+        const style = document.createElement('link');
+        style.setAttribute('rel', 'stylesheet');
+        style.setAttribute('href', './css/program.css');
+        this.shadow.append(style);
     }
 }
 

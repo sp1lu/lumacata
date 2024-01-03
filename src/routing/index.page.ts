@@ -17,7 +17,7 @@ export class IndexPage extends HTMLElement {
                     <span class="second-row">CATA</span>
                     <span class="year">2024</span>
                 </h1>
-                <h2>10 - 15 GIUGNO</h2>
+                <h2>13 - 17 GIUGNO</h2>
             </div>
             `
             ;

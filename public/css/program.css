@@ -1,0 +1,22 @@
+h1, h2 {
+    font-family: 'Brice';
+    color: var(--orange);
+    text-transform: uppercase;
+    text-align: center;
+}
+
+.page {
+    background-color: var(--green);
+    color: var(--beige);
+    min-height: 100vh;
+}
+
+.program {
+    max-width: 768px;
+    margin: auto;
+    padding: 40px 4%;
+}
+
+.date {
+    margin-bottom: 64px;
+}
