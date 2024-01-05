@@ -5,7 +5,7 @@
             "type": "Feature",
             "properties": {
                 "title": "Partenza navetta",
-                "maps": "",
+                "maps": "https://maps.app.goo.gl/cMJFoLPuXkp73pat6",
                 "icon": "shuttle"
             },
             "geometry": {
@@ -21,7 +21,7 @@
             "type": "Feature",
             "properties": {
                 "title": "Lumacata",
-                "maps": "",
+                "maps": "https://maps.app.goo.gl/Cncfj2jFQw5Gsexr9",
                 "icon": "festival"
             },
             "geometry": {
@@ -37,7 +37,7 @@
             "type": "Feature",
             "properties": {
                 "title": "Capolinea 97 (e 97/)",
-                "maps": "",
+                "maps": "https://maps.app.goo.gl/W8dHnRXHgfCtxV6k6",
                 "icon": "bus"
             },
             "geometry": {

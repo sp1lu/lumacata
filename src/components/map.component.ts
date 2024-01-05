@@ -110,8 +110,18 @@ export class MapComponent extends HTMLElement {
     }
 
     createPopup(feature: any, layer: Leaflet.Layer) {
-        if (!feature.properties && !feature.properties.title) return;
-        layer.bindPopup(feature.properties.title);
+        if (!feature.properties && !feature.properties.title && !feature.properties.maps) return;
+        const popupContent =
+            `
+            <div style="text-align: center">
+                <h4 style="margin: 0 0 4px 0">${feature.properties.title}</h4>
+                <a href="${feature.properties.maps}" target="_blank">Guarda su Google Maps</a>
+            </div>
+            `
+            ;
+
+        // layer.bindPopup(feature.properties.title);
+        layer.bindPopup(popupContent);
     }
 }
 
