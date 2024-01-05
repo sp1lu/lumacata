@@ -65,7 +65,7 @@ export class MapComponent extends HTMLElement {
         this.append(style);
 
         // js
-        this.map = Leaflet.map(this, { zoomControl: false }).setView([44.44061405644311, 8.736987188621248], 14);
+        this.map = Leaflet.map(this, { zoomControl: false }).setView([44.44061405644311, 8.736987188621248], 13);
 
         Leaflet.control.zoom({ position: 'bottomright' }).addTo(this.map);
 
