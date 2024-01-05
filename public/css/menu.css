@@ -18,8 +18,7 @@ h1 {
 .info {
     font-size: .9rem;
     max-width: 576px;
-    margin: 0 auto 64px auto;
-    padding: 0 4%;
+    margin: 0 0 40px 0;
 }
 
 .sunday-only {
