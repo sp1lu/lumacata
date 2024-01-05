@@ -24,6 +24,10 @@ a {
     font-weight: 500;
 }
 
+ul {
+    margin: 0;
+}
+
 .page {
     background-color: var(--red);
     color: var(--beige);
@@ -37,4 +41,8 @@ a {
 
 .vehicle {
     margin: 0 0 32px 0;
+}
+
+.vehicle:last-child {
+    margin-bottom: 0;
 }

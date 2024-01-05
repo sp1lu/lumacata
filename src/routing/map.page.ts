@@ -38,6 +38,7 @@ export class MapPage extends HTMLElement {
                         </ul>
                     </div>
                 </div>
+                <app-footer></app-footer>
             </div>
             `
 

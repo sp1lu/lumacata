@@ -27,9 +27,11 @@ export class ProgramPage extends HTMLElement {
         this.shadow.innerHTML = 
             `
             <div class="page">
+                <app-header></app-header>
                 <div class="program">
                     <h1>Programma</h1>
                 </div>
+                <app-footer></app-footer>
             </div>
             `
             ;

@@ -1,5 +1,5 @@
-export class IndexPage extends HTMLElement {
-    private shadow: ShadowRoot;
+export class HeaderComponent extends HTMLElement {
+    shadow: ShadowRoot;
 
     constructor() {
         super();
@@ -10,13 +10,12 @@ export class IndexPage extends HTMLElement {
         // html
         this.shadow.innerHTML =
             `
-            <div>
-                <h1>
+            <div class="header">
+                <a href="/" class="logo-text">
                     <span class="first-row">LUMA</span>
                     <span class="second-row">CATA</span>
                     <span class="year">2024</span>
-                </h1>
-                <h2>13 - 17 GIUGNO</h2>
+                </a>
             </div>
             `
             ;
@@ -24,9 +23,9 @@ export class IndexPage extends HTMLElement {
         // css
         const style = document.createElement('link');
         style.setAttribute('rel', 'stylesheet');
-        style.setAttribute('href', './css/index.css');
+        style.setAttribute('href', '/css/header.css');
         this.shadow.append(style);
     }
 }
 
-customElements.define('page-index', IndexPage);
+customElements.define('app-header', HeaderComponent);

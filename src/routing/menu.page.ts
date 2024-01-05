@@ -28,10 +28,12 @@ export class MenuPage extends HTMLElement {
         
             `
             <div class="page">
+                <app-header></app-header>
                 <div class="menu">
                     <h1>Menu</h1>
                     <p class="info">I piatti contrasseganti da una lettera <span class="sunday-only">D</span> sono disponibili solo durante il pranzo di domenica 16 giugno.</p>
                 </div>
+                <app-footer></app-footer>
             </div>
             `
             ;

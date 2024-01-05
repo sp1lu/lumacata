@@ -3,6 +3,7 @@ h1, h2 {
     color: var(--orange);
     text-transform: uppercase;
     text-align: center;
+    margin: 0 0 16px 0;
 }
 
 .page {
