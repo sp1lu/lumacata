@@ -29,7 +29,7 @@ export class MapPage extends HTMLElement {
                         </ul>
                     </div>
                     <div class="vehicle">
-                        <h2>Con l' auto</h2>
+                        <h2>Con l'auto</h2>
                         <ul>
                             <li>Uscire dall'autostrada A10 Genova - Ventimiglia al casello <b>Genova Pra'</b>.</li>
                             <li>Attraversare in direzione ponente tutta la delegazione di Genova Voltri.</li>
