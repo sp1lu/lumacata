@@ -7,7 +7,7 @@ export class DishComponent extends HTMLElement {
     constructor() {
         super();
         this.shadow = this.attachShadow({ mode: 'closed' });
-        this._dish = { name: '', price: 0 };
+        this._dish = { name: '', price: 0, sundayOnly: false };
     }
 
     get dish() {
@@ -18,12 +18,14 @@ export class DishComponent extends HTMLElement {
         this._dish = dish;
     }
 
-    connectedCallback() {
+    connectedCallback() {       
         // html
         this.shadow.innerHTML =
             `
-            <div>
-                <p class="name"></p>
+            <div class="component">
+                <div class="dish">
+                    <p class="name"></p>
+                </div>
                 <div class="price">
                     <span class="currency">€</span>
                     <p class="value"></p>
@@ -32,10 +34,19 @@ export class DishComponent extends HTMLElement {
             `
             ;
 
+        const dish = this.shadow.querySelector('.dish')!;
         const text = this.shadow.querySelector('.name')!;
         const price = this.shadow.querySelector('.value')!;
+
         text.innerHTML = this.dish.name;
         price.innerHTML = this.dish.price.toFixed(2);
+
+        if (this.dish.sundayOnly) {        
+            let sunday = document.createElement('span');
+            sunday.classList.add('sunday-only');
+            sunday.innerText = 'D';
+            dish.append(sunday);
+        }
 
         // css
         const style = document.createElement('link');

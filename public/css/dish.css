@@ -1,5 +1,19 @@
+.component {
+    margin: 0 0 8px 0;
+}
+
 div {
     display: flex;
     align-items: center;
     justify-content: space-between;
+}
+
+.sunday-only {
+    font-family: 'Brice';
+    color: var(--red);
+    margin: 0 0 0 8px;
+}
+
+p {
+    margin: 0;
 }

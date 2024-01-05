@@ -24,22 +24,36 @@ export class MenuPage extends HTMLElement {
         this.data = await MenuService.instance.getData();
 
         // html
-        this.shadow.innerHTML = '<div></div>';
-        const div = this.shadow.querySelector('div');
+        this.shadow.innerHTML =
+        
+            `
+            <div class="page">
+                <div class="menu">
+                    <h1>Menu</h1>
+                    <p class="info">I piatti contrasseganti da una lettera <span class="sunday-only">D</span> sono disponibili solo durante il pranzo di domenica 16 giugno.</p>
+                </div>
+            </div>
+            `
+            ;
+
+        const div = this.shadow.querySelector('.menu');
 
         this.data.categorie.forEach((category: any) => {
             if (!category.name) return;
+            const course = document.createElement('div');
+            course.classList.add('course');
             const title = document.createElement('h2');
-            title.classList.add('category-title');
+            title.classList.add('title');
             title.innerText = category.name;
-            div?.append(title);
+            course?.append(title);
+            div?.append(course);
 
             category.dishes.forEach((item: any) => {
                 if (!item.name || !item.price) return;
-                const dish = new Dish(item.name, item.price);
+                const dish = new Dish(item.name, item.price, item.sundayOnly);
                 const dishComponent = document.createElement('app-dish') as DishComponent;
                 dishComponent.dish = dish;
-                div?.append(dishComponent);
+                course?.append(dishComponent);
             });
         });
 

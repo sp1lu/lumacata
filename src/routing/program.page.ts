@@ -33,6 +33,7 @@ export class ProgramPage extends HTMLElement {
             </div>
             `
             ;
+            
         const div = this.shadow.querySelector('.program');
 
         this.data.program.forEach((category: any) => {
