@@ -74,11 +74,6 @@ export class MapComponent extends HTMLElement {
             attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
         }).addTo(this.map);
 
-        setTimeout(() => {
-            if (!this.map) return;
-            this.map.invalidateSize();
-        }, 0);
-
         this.render();
     }
 
@@ -87,6 +82,11 @@ export class MapComponent extends HTMLElement {
             pointToLayer: (feature, latLng) => this.createMarker(feature, latLng),
             onEachFeature: this.createPopup
         }).addTo(this.map);
+
+        setTimeout(() => {
+            if (!this.map) return;
+            this.map.invalidateSize();
+        }, 0);
     }
 
     createMarker(feature: any, latLng: Leaflet.LatLng) {
